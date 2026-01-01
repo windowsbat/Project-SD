@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>PROJECT S.D.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #111 0%, #050505 60%);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .slider {
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(60px);
+      transition: 0.9s ease;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: translateY(0);
+      z-index: 2;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(16px);
+      border-radius: 24px;
+      padding: 50px;
+      max-width: 800px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    }
+
+    h1 {
+      font-size: 64px;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+
+    .highlight {
+      color: #6cf;
+      font-weight: 600;
+    }
+
+    .hint {
+      position: absolute;
+      top: 30px;
+      font-size: 13px;
+      opacity: 0.4;
+      letter-spacing: 2px;
+    }
+
+    .nav {
+      position: absolute;
+      bottom: 40px;
+      display: flex;
+      gap: 14px;
+    }
+
+    .nav button {
+      padding: 12px 20px;
+      border-radius: 30px;
+      border: none;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .nav button:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
+    /* ADMINS */
+    .admin {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .admin img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.25);
+      box-shadow: 0 0 30px rgba(102,204,255,0.45);
+    }
+
+    .admin-info {
+      text-align: left;
+      max-width: 420px;
+    }
+
+    .role {
+      font-size: 14px;
+      opacity: 0.65;
+    }
+
+    .name {
+      font-size: 28px;
+      font-weight: 700;
+      color: #6cf;
+      margin: 4px 0;
+    }
+
+    .realname,
+    .privacy {
+      font-size: 15px;
+      opacity: 0.85;
+    }
+
+    .soon {
+      margin-top: 35px;
+      font-size: 15px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+<div class="slider">
+
+  <!-- SLIDE 1 -->
+  <div class="slide active">
+    <div class="hint">PROJECT S.D.</div>
+    <h1>PROJECT S.D.</h1>
+    <p>StarsDrop • Идея • Развитие</p>
+  </div>
+
+  <!-- SLIDE 2 -->
+  <div class="slide">
+    <div class="card">
+      <h2>Кто мы</h2>
+      <p>
+        Меня зовут <span class="highlight">MixMer21</span>.
+        Я создал бота для <span class="highlight">бесплатных звёзд Telegram</span>.
+        <br><br>
+        Проект <span class="highlight">StarsDrop</span> — это система,
+        которая постоянно развивается.
+        <br><br>
+        Именно на этом сайте будут публиковаться
+        <span class="highlight">обновления StarsDrop</span>,
+        изменения и новости проекта.
+      </p>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 -->
+  <div class="slide">
+    <div class="card">
+      <h2>Как появился проект</h2>
+      <p>
+        Всё началось с идеи —
+        создать бота по <span class="highlight">бесплатным звёздам</span>.
+        <br><br>
+        Со временем идея выросла
+        в полноценный проект —
+        <span class="highlight">StarsDrop</span>,
+        который вы видите сегодня.
+      </p>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 -->
+  <div class="slide">
+    <div class="card">
+      <h2>Наши администраторы</h2>
+
+      <div class="admin">
+        <img src="admin.jpg" alt="MixMer21">
+
+        <div class="admin-info">
+          <p class="role">Главный администратор • Создатель</p>
+          <p class="name">MixMer21</p>
+          <p class="realname">Настоящее имя: Илья</p>
+          <p class="privacy">Проживание: конфиденциально</p>
+        </div>
+      </div>
+
+      <p class="soon">
+        Скоро здесь появятся другие администраторы проекта ✨
+      </p>
+    </div>
+  </div>
+
+  <div class="nav">
+    <button onclick="prev()">← Назад</button>
+    <button onclick="next()">Далее →</button>
+  </div>
+
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+
+  function next() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  function prev() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') prev();
+  });
+</script>
+
+</body>
+</html>
